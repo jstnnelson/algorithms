@@ -7,7 +7,7 @@
 //
 
 #include <iostream>
-
+#include <algorithm>
 
 
 int main(){
@@ -19,9 +19,7 @@ int main(){
     for(int i=1;i<sizeof(array)/sizeof(array[0]);i++){
       if(array[i-1] > array[i]){
         swapped = true;
-        int temp = array[i];
-        array[i] = array[i-1];
-        array[i-1] = temp;
+        std::swap(array[i-1], array[i]);
       }
     }
   }while(swapped);
